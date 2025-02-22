@@ -14,10 +14,10 @@ const Header = () => {
           Empowering You To Act, Not Panic
         </h2>
         <div className="space-x-6 mt-16">
-          <a href="#task1" className="bg-green-950 text-white px-6 py-3 rounded-lg hover:bg-green-700">
+          <a href="./Learn" className="bg-green-950 text-white px-6 py-3 rounded-lg hover:bg-green-700">
             Start Learning
           </a>
-          <a href="#task2" className="bg-green-950 text-white px-6 py-3 rounded-lg hover:bg-green-700">
+          <a href="./Quiz" className="bg-green-950 px-8 py-3 rounded">
             Take a Quiz
           </a>
         </div>

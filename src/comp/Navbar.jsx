@@ -1,61 +1,94 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { assets } from "../assets/assets";
 
 const Navbar = () => {
   const [showmobmenu, setshowmobmenu] = useState(false);
+
   return (
-    <div className=" bg-green-950 fixed top-0 left-0  w-full z-10">
-      <div className="container mx-auto flex justify-between items-center py-3 px-5 text-white-950">
-        <img src={assets.icon} alt="" width={40} height={40} />
-        <ul className="hidden md:flex gap-7 text-white">
-          <a href="#Header" className="cursor-pointer hover:text-gray-400">
+    <nav className="bg-green-950 fixed top-0 left-0 w-full z-10 shadow-md">
+      <div className="container mx-auto flex justify-between items-center py-4 px-6">
+        
+        {/* Logo */}
+        <Link to="/">
+          <img src={assets.icon} alt="SurakshaX Logo" width={40} height={40} />
+        </Link>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex gap-8">
+          <Link
+            to="/"
+            className="text-white text-lg font-medium hover:text-green-300 transition duration-300"
+          >
             Home
-          </a>
-          
-          <a href="#Header" className="cursor-pointer hover:text-gray-400">
+          </Link>
+          <Link
+            to="/about"
+            className="text-white text-lg font-medium hover:text-green-300 transition duration-300"
+          >
             About Us
-          </a>
-          <a href="#Header" className="cursor-pointer hover:text-gray-400">
+          </Link>
+          <Link
+            to="/contact"
+            className="text-white text-lg font-medium hover:text-green-300 transition duration-300"
+          >
             Contact Us
-          </a>
+          </Link>
         </ul>
-        <button className="hidden md:block bg-white px-8 py-2 rounded-full hover:bg-green-100 text-[#004D25] font-medium">
-          Sign Up
-        </button>
+
+        {/* Sign Up Button */}
+        <Link to="/signup" className="hidden md:block">
+          <button className="bg-white text-green-900 px-6 py-2 rounded-full font-semibold shadow-md hover:bg-green-100 transition duration-300">
+            Sign Up
+          </button>
+        </Link>
+
+        {/* Mobile Menu Icon */}
         <img
           onClick={() => setshowmobmenu(true)}
           src={assets.menu}
-          className="md:hidden w-7 cursor-pointer "
-          alt=""
+          className="md:hidden w-7 cursor-pointer"
+          alt="Menu"
         />
       </div>
 
+      {/* Mobile Menu */}
       <div
-        className={`md:hidden ${
-          showmobmenu ? "fixed w-full" : "h-0 w-0"
-        } right-0 top-0 bottom-0 overflow-hidden bg-white transition-all`}
-         >
-        <div className="flex justify-end p-6  cursor-pointer">
+        className={`fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform ${
+          showmobmenu ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out`}
+      >
+        <div className="flex justify-end p-6">
           <img
             onClick={() => setshowmobmenu(false)}
             src={assets.cross}
-            className="w-6"
-            alt=""
+            className="w-6 cursor-pointer"
+            alt="Close"
           />
         </div>
-        <ul className="flex flex-col items-center gap-2 mt-5 px-5 text-lg  text-green-950 font-medium">
-          <a href="#Header" className="px-4 py-2 rounded-full inline-block">
+
+        <ul className="mt-5 text-lg text-green-950 font-medium flex flex-col gap-4 px-6">
+          <Link
+            to="/"
+            className="hover:bg-green-100 py-3 px-4 rounded-md transition duration-300"
+          >
             Home
-          </a>
-          <a href="#Header" className="px-4 py-2  rounded-full inline-block">
+          </Link>
+          <Link
+            to="/about"
+            className="hover:bg-green-100 py-3 px-4 rounded-md transition duration-300"
+          >
             About
-          </a>
-          <a href="#Header" className="px-4 py-2 rounded-full inline-block">
+          </Link>
+          <Link
+            to="/contact"
+            className="hover:bg-green-100 py-3 px-4 rounded-md transition duration-300"
+          >
             Contact Us
-          </a>
+          </Link>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 
