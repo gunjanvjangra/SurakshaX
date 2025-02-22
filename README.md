@@ -1,2 +1,2 @@
-# SurakshaX-
-India’s Digital Disaster Safety Hub
+# SurakshaX
+India’s DIGITAL CRISIS Education HUB
