@@ -4,27 +4,28 @@ import { assets } from "../assets/assets";
 const Navbar = () => {
   const [showmobmenu, setshowmobmenu] = useState(false);
   return (
-    <div className="absolute top-0 left-0 w-full z-10">
-      <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 bg-transparent">
-        <img src={assets.icon} alt="" width={50} height={50} />
+    <div className=" bg-green-950 fixed top-0 left-0  w-full z-10">
+      <div className="container mx-auto flex justify-between items-center py-3 px-5 text-white-950">
+        <img src={assets.icon} alt="" width={40} height={40} />
         <ul className="hidden md:flex gap-7 text-white">
           <a href="#Header" className="cursor-pointer hover:text-gray-400">
             Home
           </a>
+          
           <a href="#Header" className="cursor-pointer hover:text-gray-400">
-            Home
+            About Us
           </a>
           <a href="#Header" className="cursor-pointer hover:text-gray-400">
-            Home
+            Contact Us
           </a>
         </ul>
-        <button className="hidden md:block bg-white px-8 py-2 rounded-full">
+        <button className="hidden md:block bg-white px-8 py-2 rounded-full hover:bg-green-100 text-[#004D25] font-medium">
           Sign Up
         </button>
         <img
           onClick={() => setshowmobmenu(true)}
           src={assets.menu}
-          className="md:hidden w-7 cursor-pointer"
+          className="md:hidden w-7 cursor-pointer "
           alt=""
         />
       </div>
@@ -33,8 +34,8 @@ const Navbar = () => {
         className={`md:hidden ${
           showmobmenu ? "fixed w-full" : "h-0 w-0"
         } right-0 top-0 bottom-0 overflow-hidden bg-white transition-all`}
-      >
-        <div className="flex justify-end p-6 cursor-pointer">
+         >
+        <div className="flex justify-end p-6  cursor-pointer">
           <img
             onClick={() => setshowmobmenu(false)}
             src={assets.cross}
@@ -42,11 +43,11 @@ const Navbar = () => {
             alt=""
           />
         </div>
-        <ul className="flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium">
+        <ul className="flex flex-col items-center gap-2 mt-5 px-5 text-lg  text-green-950 font-medium">
           <a href="#Header" className="px-4 py-2 rounded-full inline-block">
             Home
           </a>
-          <a href="#Header" className="px-4 py-2 rounded-full inline-block">
+          <a href="#Header" className="px-4 py-2  rounded-full inline-block">
             About
           </a>
           <a href="#Header" className="px-4 py-2 rounded-full inline-block">
