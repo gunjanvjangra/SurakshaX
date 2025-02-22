@@ -1,2 +1,2 @@
 # SurakshaX
-India’s DIGITAL CRISIS Education HUB
+India’s Digital Crisis Education Hub
