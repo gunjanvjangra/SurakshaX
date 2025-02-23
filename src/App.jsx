@@ -8,40 +8,16 @@ import Quiz from "./comp/Quiz";
 import Learn from "./comp/Learn";
 import SignUp from "./comp/SignUp";
 import Login from "./comp/Login";
-<<<<<<< HEAD
-=======
 import AboutUs from "./comp/AboutUs";
 import ContactUs from "./comp/ContactUs";
-import Footer from "./comp/Footer"; // ✅ Added Footer
->>>>>>> fe74968 (initial commit)
+import Footer from "./comp/Footer";
 
 const App = () => {
   return (
     <Router>
-<<<<<<< HEAD
-      <Navbar />  {/* Ensure Navbar is visible on all pages */}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Header />
-              <WhySurakshaX />
-              <InteractiveLearning />
-            </>
-          }
-        />
-        <Route path="/learn" element={<Learn />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-=======
       <div className="flex flex-col min-h-screen">
-        <Navbar /> {/* ✅ Navbar remains at the top of all pages */}
+        <Navbar /> {/* ✅ Navbar appears on all pages */}
         <main className="flex-grow">
-          {" "}
-          {/* ✅ Ensures content expands properly */}
           <Routes>
             <Route
               path="/"
@@ -61,9 +37,8 @@ const App = () => {
             <Route path="/contact" element={<ContactUs />} />
           </Routes>
         </main>
-        <Footer /> {/* ✅ Added Footer at the bottom */}
+        <Footer /> {/* ✅ Footer at the bottom */}
       </div>
->>>>>>> fe74968 (initial commit)
     </Router>
   );
 };

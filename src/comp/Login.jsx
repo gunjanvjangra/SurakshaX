@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // Simulated authentication (replace with real authentication logic)
+    if (email && password) {
+      navigate("/"); // Redirect to homepage after login
+    } else {
+      alert("Please enter valid email and password!");
+    }
+  };
+
   return (
     <div
       className="flex justify-center items-center h-screen bg-cover bg-center"
-      style={{
-        backgroundImage: "url('../public/output.jpg')",
-      }}
+      style={{ backgroundImage: "url('/output.jpg')" }} // Fixed path
     >
       {/* Glassmorphic Card */}
       <div className="bg-black/50 backdrop-blur-xl p-8 rounded-2xl shadow-xl text-white w-96 border border-white/30">
@@ -14,14 +28,17 @@ const Login = () => {
           Log In
         </h2>
 
-        <form className="space-y-5">
+        <form className="space-y-5" onSubmit={handleLogin}>
           {/* Email Field */}
           <div>
             <label className="block text-sm font-semibold">Email</label>
             <input
               type="email"
               placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-2 mt-1 rounded-lg bg-white/20 text-white placeholder-gray-300 outline-none border border-white/30 focus:ring-2 focus:ring-white focus:bg-white/30 transition"
+              required
             />
           </div>
 
@@ -31,7 +48,10 @@ const Login = () => {
             <input
               type="password"
               placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-2 mt-1 rounded-lg bg-white/20 text-white placeholder-gray-300 outline-none border border-white/30 focus:ring-2 focus:ring-white focus:bg-white/30 transition"
+              required
             />
           </div>
 
@@ -47,7 +67,7 @@ const Login = () => {
         {/* Signup Redirect */}
         <p className="text-center mt-4 text-sm text-gray-200">
           Don't have an account?{" "}
-          <a href="./Signup" className="text-green-400 hover:underline">
+          <a href="/signup" className="text-green-400 hover:underline">
             Sign up
           </a>
         </p>
