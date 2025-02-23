@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaTools,
   FaExclamationTriangle,
@@ -6,11 +6,10 @@ import {
   FaWater,
   FaFire,
 } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import VideoCarousel from "./VideoCarousel"; 
 
 const disasterPreparedness = [
   {
-    
     disaster: "Earthquake Preparedness",
     steps: [
       {
@@ -122,8 +121,7 @@ const Learn = () => {
         Disaster Preparedness Guide
       </h1>
       <p className="text-lg text-center max-w-2xl mx-auto mb-12">
-        Learn the essential steps to stay safe before, during, and after
-        disasters.
+        Learn the essential steps to stay safe before, during, and after disasters.
       </p>
 
       {disasterPreparedness.map((disaster, index) => (
@@ -160,6 +158,18 @@ const Learn = () => {
           </div>
         </div>
       ))}
+
+      {/* ✅ Learn Rescue Operations Section */}
+  {/* ✅ Learn Rescue Operations Section */}
+<div className="mt-10 bg-white text-black p-6 rounded-lg mb 1shadow-lg">
+  <h2 className="text-3xl font-bold text-center mb-4">Learn Rescue Operations</h2>
+  <p className="text-lg text-center mb-2">
+    Watch rescue operations to understand real-world disaster management techniques.
+  </p>
+    <VideoCarousel />
+</div>
+
+
     </div>
   );
 };

@@ -11,20 +11,19 @@ const SignUp = () => {
 
   const handleSignUp = (e) => {
     e.preventDefault();
-
-    // Simulated sign-up logic (replace with actual backend logic)
+    
     if (fullName.trim() && email.trim() && password.trim()) {
-      localStorage.setItem("isAuthenticated", "true"); // Mark user as logged in
-
-      // Get stored next page (if any) and clear it after use
-      const nextPage = localStorage.getItem("nextPage") || "/";
+      localStorage.setItem("isAuthenticated", "true"); // ✅ Ensure this is being set
+      console.log("User signed up! Auth status updated.");
+      
+      const nextPage = localStorage.getItem("nextPage") || "/learn"; // Ensure it goes to learn
       localStorage.removeItem("nextPage");
-
-      navigate(nextPage); // Redirect to the intended page (default: home)
+      navigate(nextPage);
     } else {
       alert("Please fill in all fields correctly!");
     }
   };
+  
 
   return (
     <div

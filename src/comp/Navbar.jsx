@@ -4,13 +4,13 @@ import { assets } from "../assets/assets";
 
 const Navbar = () => {
   const [showmobmenu, setshowmobmenu] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     setIsAuthenticated(localStorage.getItem("isAuthenticated") === "true");
   }, []);
-  
 
   const handleLogout = () => {
     if (window.confirm("Are you sure you want to log out?")) {
@@ -59,15 +59,22 @@ const Navbar = () => {
                 src={assets.userIcon}
                 alt="Profile"
                 className="w-10 h-10 rounded-full cursor-pointer border-2 border-white hover:border-green-300 transition"
-                onClick={() => setshowmobmenu((prev) => !prev)}
+                onClick={() => setShowProfileMenu((prev) => !prev)}
               />
-              {showmobmenu && (
+              {showProfileMenu && (
                 <div className="absolute right-0 mt-2 w-40 bg-white text-black rounded-lg shadow-lg">
-                  <Link to="/profile" className="block px-4 py-2 hover:bg-gray-100">
+                  <Link
+                    to="/profile"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                    onClick={() => setShowProfileMenu(false)}
+                  >
                     View Profile
                   </Link>
                   <button
-                    onClick={handleLogout}
+                    onClick={() => {
+                      handleLogout();
+                      setShowProfileMenu(false);
+                    }}
                     className="w-full text-left px-4 py-2 hover:bg-gray-100"
                   >
                     Logout
@@ -144,7 +151,10 @@ const Navbar = () => {
                   View Profile
                 </Link>
                 <button
-                  onClick={handleLogout}
+                  onClick={() => {
+                    handleLogout();
+                    setshowmobmenu(false);
+                  }}
                   className="text-left w-full hover:bg-green-100 py-3 px-4 rounded-md transition duration-300"
                 >
                   Logout

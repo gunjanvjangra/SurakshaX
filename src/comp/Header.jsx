@@ -1,24 +1,28 @@
 import React from "react";
 import Navbar from "./Navbar";
 import { Link, useNavigate } from "react-router-dom";
-import {useAuth} from "../Authcontext";
+
 
 const Header = () => {
-  const navigate = useNavigate();
-  const handleStartLearning = () => {
-    console.log("Start Learning button clicked");
-    console.log("Auth status:", isAuthenticated);
   
-    if (isAuthenticated) {
-      console.log("Redirecting to Learn page...");
-      navigate("/learn");
-    } else {
-      console.log("User not authenticated, going to Signup...");
-      localStorage.setItem("nextPage", "/learn");
-      navigate("/signup");
-    }
-  };
-  
+    const navigate = useNavigate();
+
+    const handleStartLearning = () => {
+      const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
+    
+      console.log("Start Learning button clicked");
+      console.log("LocalStorage isAuthenticated:", localStorage.getItem("isAuthenticated")); // Debugging line
+    
+      if (isAuthenticated) {
+        console.log("✅ User is authenticated, redirecting to Learn...");
+        navigate("/learn");
+      } else {
+        console.log("❌ User not authenticated, redirecting to Signup...");
+        localStorage.setItem("nextPage", "/learn");
+        navigate("/signup");
+      }
+    };
+    
   return (
     <div
       className="min-h-screen mb-4 bg-cover bg-center flex items-center w-full overflow-hidden"
