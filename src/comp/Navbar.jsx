@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom"; // ✅ Import useLocation
 import { assets } from "../assets/assets";
 
 const Navbar = () => {
@@ -7,10 +7,12 @@ const Navbar = () => {
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation(); // ✅ Get current route
 
+  // ✅ Update authentication status when route changes
   useEffect(() => {
     setIsAuthenticated(localStorage.getItem("isAuthenticated") === "true");
-  }, []);
+  }, [location]); // ✅ Trigger effect when the route changes
 
   const handleLogout = () => {
     if (window.confirm("Are you sure you want to log out?")) {
