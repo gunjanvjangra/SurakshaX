@@ -11,7 +11,7 @@ import Login from "./comp/Login";
 import AboutUs from "./comp/AboutUs";
 import ContactUs from "./comp/ContactUs";
 import Footer from "./comp/Footer";
-
+import { AuthProvider } from "./Authcontext";
 const App = () => {
   return (
     <Router>

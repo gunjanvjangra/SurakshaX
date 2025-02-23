@@ -8,12 +8,18 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    
+    // Simulated authentication check (Replace with actual backend validation)
+    if (email.trim() && password.trim()) {
+      localStorage.setItem("isAuthenticated", "true"); // Store login status
 
-    // Simulated authentication (replace with real authentication logic)
-    if (email && password) {
-      navigate("/"); // Redirect to homepage after login
+      // Get the stored page the user wanted to visit (e.g., "/learn")
+      const nextPage = localStorage.getItem("nextPage") || "/";
+      localStorage.removeItem("nextPage"); // Clear after use
+
+      navigate(nextPage); // Redirect to intended page
     } else {
-      alert("Please enter valid email and password!");
+      alert("Please enter a valid email and password!");
     }
   };
 

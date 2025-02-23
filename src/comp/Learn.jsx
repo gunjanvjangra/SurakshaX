@@ -6,9 +6,11 @@ import {
   FaWater,
   FaFire,
 } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 const disasterPreparedness = [
   {
+    
     disaster: "Earthquake Preparedness",
     steps: [
       {
@@ -107,6 +109,12 @@ const disasterPreparedness = [
 ];
 
 const Learn = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    setIsAuthenticated(localStorage.getItem("isAuthenticated") === "true");
+  }, []);
+
   return (
     <div className="bg-[#004D25] text-white min-h-screen pt-28 pb-20 px-6">
       {/* Heading */}

@@ -1,7 +1,24 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { Link, useNavigate } from "react-router-dom";
+import {useAuth} from "../Authcontext";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const handleStartLearning = () => {
+    console.log("Start Learning button clicked");
+    console.log("Auth status:", isAuthenticated);
+  
+    if (isAuthenticated) {
+      console.log("Redirecting to Learn page...");
+      navigate("/learn");
+    } else {
+      console.log("User not authenticated, going to Signup...");
+      localStorage.setItem("nextPage", "/learn");
+      navigate("/signup");
+    }
+  };
+  
   return (
     <div
       className="min-h-screen mb-4 bg-cover bg-center flex items-center w-full overflow-hidden"
@@ -14,12 +31,13 @@ const Header = () => {
           Empowering You To Act, Not Panic
         </h2>
         <div className="space-x-6 mt-16">
-          <a
-            href="./Learn"
-            className="bg-green-950 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300"
-          >
-            Start Learning
-          </a>
+        <Link
+      to="/signup" // Ensure navigation without reload
+      className="bg-green-950 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition duration-300"
+      onClick={handleStartLearning}
+    >
+      Start Learning
+    </Link>
           <a
             href="./Quiz"
             className="bg-green-950 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition duration-300"
