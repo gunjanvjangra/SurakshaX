@@ -1,7 +1,7 @@
 
-# SurakshaX : India’s Digital Crisis Education Hub
+<h1 align="center">SurakshaX : India’s Digital Crisis Education Hub</h1>
 <div style="width: 100%; max-width: 200px; margin: auto; overflow: hidden; height: 200px; position: relative;">
-  <h3 align="center">Demo Video<h3>
+  <h3 align="center">Demo Video</h3>
   <a href="https://www.youtube.com/watch?v=r5MiURyO7GI" target="_blank">
     <img src="https://img.youtube.com/vi/r5MiURyO7GI/maxresdefault.jpg" 
          alt="Demo"
@@ -9,9 +9,54 @@
   </a>
 </div>
 
+SurakshaX is an interactive and engaging platform designed to tackle the low public awareness and preparedness for natural disasters in India. By providing a user-friendly and accessible learning experience, our mission is to empower individuals and communities to effectively respond to emergencies like earthquakes, floods, and cyclones, ultimately creating a more resilient and disaster-ready society.
 
+##  Features
 
-SurakshaX addresses key issues in disaster preparedness in India, a country prone to crises like earthquakes, floods, and cyclones. Despite frequent disasters, public awareness and readiness remain low, leading to loss of lives and delayed responses. SurakshaX aims to change this by providing an interactive, engaging platform to help individuals and communities learn how to effectively respond to emergencies. The platform tackles the lack of awareness and preparedness by offering interactive learning modules, quizzes, and real-world scenarios that simplify disaster response. This makes learning accessible and easier to understand, ensuring individuals are better prepared. SurakshaX also uses gamification to keep users engaged, enhancing retention of critical safety skills, which is especially useful in schools.
+  * **Interactive Learning Modules**: Simple and easy-to-understand modules that cover essential disaster response and safety protocols.
+  * **Quizzes & Scenarios**: Test your knowledge and learn through gamified, real-world scenarios that enhance retention of critical safety skills.
 
-SurakshaX benefits not only individuals but also schools, NGOs, and government agencies. It can be integrated into educational curricula, used by community organizations for awareness, and partnered with government agencies for national disaster preparedness initiatives.
-Ultimately, SurakshaX creates a more resilient, disaster-ready society by making disaster preparedness easier, safer, and more effective through interactive learning and real-time community support.
+## Tech Stack
+
+SurakshaX is built with a modern and robust technology stack to ensure a responsive, scalable, and secure platform.
+
+  * **Frontend**: `HTML`, `CSS`, `React.js`, `JavaScript`, `Tailwind CSS`
+
+## Getting Started
+
+To get a local copy of the project up and running, follow these simple steps.
+
+### Prerequisites
+
+You'll need `npm` or `yarn` installed on your machine.
+
+```bash
+npm install npm@latest -g
+```
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/suraksha-x.git
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd suraksha-x
+    ```
+3.  Install dependencies:
+    ```bash
+    npm install
+    ```
+4.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+The application will now be running on `http://localhost:5000`.
+
+-----
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
